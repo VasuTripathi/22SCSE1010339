@@ -1,13 +1,13 @@
 // === utils/loggerMiddleware.js ===
 
 export async function logAction(action, payload = {}) {
-  const token = "YOUR_ACCESS_TOKEN_HERE"; // 🔁 Replace with your actual access token
+  const token = "Muagvq"; 
   const payloadMessage = `${action} - ${JSON.stringify(payload)}`;
 
   const logEntry = {
-    stack: "frontend",              // or "backend" depending on usage
-    level: "info",                  // "info" | "error" | "debug"
-    package: "utils",              // "utils", "page", "hook", etc.
+    stack: "frontend",              
+    level: "info",                 
+    package: "utils",             
     message: payloadMessage,
   };
 
@@ -16,7 +16,7 @@ export async function logAction(action, payload = {}) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`, // Include your token here
+        "Authorization": `Bearer ${token}`, 
       },
       body: JSON.stringify(logEntry),
     });
